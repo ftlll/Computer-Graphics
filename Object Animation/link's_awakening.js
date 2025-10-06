@@ -820,7 +820,7 @@ function platform() {
 
 function keyPressed() {
   if (key === 's' || key === 'S') {
-    saveCanvas('tianlu_feng.jpg');
+    saveCanvas('link\'s_awakening.jpg');
   }
 }
 
