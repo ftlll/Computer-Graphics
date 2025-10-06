@@ -37,8 +37,6 @@ Your first task is to modify a translucent blue polygon to display a spiral of s
 
 create a fractal pattern based on the sine of complex numbers. Modify one of the squares from the example code to display a white fractal set against a colored background (e.g., red).
 
-```
-
 ---
 
 ### 3. Magnifier
@@ -46,13 +44,13 @@ create a fractal pattern based on the sine of complex numbers. Modify one of the
 A magnifying glass effect on an image using fragment shaders:
 
 - **Convert color to grayscale:**
-Calculate the grayscale value of each fragment by averaging the red, green, and blue components of the pixel texture.
+  Calculate the grayscale value of each fragment by averaging the red, green, and blue components of the pixel texture.
 
 - **Moving grayscale circle:**
-Display a moving circle on the image that only shows the grayscale version of the pixels inside the circle.
+  Display a moving circle on the image that only shows the grayscale version of the pixels inside the circle.
 
 - **Magnification effect:**
-Modify the contents of the grayscale circle to show a magnified portion of the image. The pixels displayed inside the circle should come from a smaller region (half the diameter of the full circle), centered on the circle’s center.
+  Modify the contents of the grayscale circle to show a magnified portion of the image. The pixels displayed inside the circle should come from a smaller region (half the diameter of the full circle), centered on the circle’s center.
 
 - **Implementation notes:**
 - The rest of the image remains in full color.
@@ -66,28 +64,27 @@ Modify the contents of the grayscale circle to show a magnified portion of the i
 Modifying the geometry of a quad to create a sinusoidal wave pattern via a vertex shader:
 
 - **Subdivide quad:**
-Modify the Java code (`p4_code.pde`) to subdivide the original quad into a grid of at least 40x40 smaller quads (planar, equal area).
+  Modify the Java code (`p4_code.pde`) to subdivide the original quad into a grid of at least 40x40 smaller quads (planar, equal area).
 
 - **Vertex displacement:**
-In the vertex shader, displace each vertex along its normal vector according to a sinusoidal function based on its distance from the center of the quad.
+  In the vertex shader, displace each vertex along its normal vector according to a sinusoidal function based on its distance from the center of the quad.
 
 - **Distance calculation:**
-The center of the quad corresponds to texture coordinates \( (s, t) = (0.5, 0.5) \). Use these to compute vertex distance from center.
+  The center of the quad corresponds to texture coordinates \( (s, t) = (0.5, 0.5) \). Use these to compute vertex distance from center.
 
 - **Edge damping:**
-To prevent cracks at the edges (where the waving quad meets other cube faces), gradually reduce the wave amplitude near the edges.
+  To prevent cracks at the edges (where the waving quad meets other cube faces), gradually reduce the wave amplitude near the edges.
 
 - **Color mapping:**
-The geometry’s color should reflect the wave height:
+  The geometry’s color should reflect the wave height:
 
 - Peaks are white.
 - Lower regions are black.
 
 - **Shader communication:**
-Pass an "offset" parameter from the vertex shader to the fragment shader to control color based on vertex displacement. This parameter is already defined in the shaders — you just need to implement it.
+  Pass an "offset" parameter from the vertex shader to the fragment shader to control color based on vertex displacement. This parameter is already defined in the shaders — you just need to implement it.
 
 - **Important:**
-All vertex movement must be done in the vertex shader, not in the Java code. The Java code only handles subdivision and initial vertex positions.
+  All vertex movement must be done in the vertex shader, not in the Java code. The Java code only handles subdivision and initial vertex positions.
 
 ---
-```
